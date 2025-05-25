@@ -1,0 +1,395 @@
+*{
+    text-decoration: none;
+}
+
+html,body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%; 
+}
+
+body{
+    background-image: url(images.png);
+    background-position: top;
+    background-size: 100% 100%;
+    background-color: #121212;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+   margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: "Truculenta", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+.navbar{
+    background-color: transparent;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.navbar,ul{
+    display: inline-flex;
+    width: 100%;
+    list-style: none;
+}
+
+.navbar{
+    padding: 10px;
+    width:  100%;
+    margin-left: 10px;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    position:fixed;
+    z-index: 5;
+    background-color: #121212;
+}
+/* #1e272e #121212 */
+.navbar{
+    position: fixed;
+    top: -1px;
+    margin: 0;
+    padding: 0;
+    width:  100%;
+}
+
+#li1{
+    margin-left: 200px;
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+#li2{
+    margin-left: 50px;
+    margin-top: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+#li3{
+    margin-left: 50px;
+    margin-top: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+#li4{
+    margin-left: 50px;
+    margin-top: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+#li1:hover{
+    color:#e3940b;
+}
+/* #89866d #130f40 */
+#li2:hover{
+    color:#e3940b ;
+}
+
+#li3:hover{
+    color:#e3940b ;
+}
+
+#li4:hover{
+    color:#e3940b ;
+}
+
+#icon2{
+    margin-top: 15px;
+    margin-right: 20px;
+    background-color: white ;
+    border-radius: 50% ;
+}
+/*#8c8c8c*/
+#icon1, #icon2, #icon3 {
+    position: static;
+    margin: 0 8px;
+    width: 35px;
+    height: 35px;
+    background: white;
+    border-radius: 50%;
+    object-fit: cover;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#icon1:hover{
+    color: #e3940b;
+}
+
+#icon2:hover{
+    color: #e3940b;
+}
+
+#icon3:hover{
+    color: #e3940b;
+}
+
+#imagee1{
+    height:600px;
+    width: 50%;
+    position: relative;
+    top: 100px;
+    border-radius: 20px;
+}
+#image2{
+    height: 600px;
+    width: 50%;
+    position: absolute;
+    top: 100px;
+    border-radius: 20px;
+}
+
+#image3{
+    height:600px;
+    width: 30%;
+    position: relative;
+    top: 705px;
+    right: 760px;
+    border-radius: 20px;
+}
+
+#image4 {
+    height: 600px;
+    position: absolute;
+    top: 705px;
+    width: 40%;
+    border-radius: 20px;
+    left: 465px;
+}
+
+#image5{
+    height: 600px;
+    left: 1077px;
+    top: 100px;
+    position: relative;
+    border-radius: 20px;
+}
+
+#image6{
+    height: 600px;
+    position: relative;
+    top: 705px;
+    width: 50%;
+    border-radius: 20px;
+    right: 448px;
+}
+
+#image7{
+    height: 600px;
+    left: 770px;
+    top: 101px;
+    border-radius: 20px;
+    width: 49%;
+    position: relative;
+}
+
+#image8{
+    height: 600px;
+    position: relative;
+    border-radius: 20px;
+    top: 705px;
+    width: 30%;
+    right: 745px;
+}
+
+#image9{
+    height: 600px;
+    position: relative;
+    top: 101px;
+    left:465px;
+    border-radius: 20px;
+    width: 40%;
+}
+
+#image10{
+    height: 600px;
+    border-radius: 20px;
+    position: relative;
+    left: 465px;
+    top: 101px;
+    width: 29%;
+}
+
+#image11{
+    height: 600px;
+    border-radius: 20px;
+    position: relative;
+    top: 100px;
+    width: 50%;
+
+}
+
+#image12{
+    height: 600px;
+    border-radius: 20px;
+    position: relative;
+    width: 50%;
+    left: 765px;
+    bottom: 505px;
+}
+
+#image13{
+    height: 600px;
+    border-radius: 20px;
+    position: relative;
+    top: 100px;
+    right: 756px;
+}
+
+#image14{
+    height: 600px;
+    border-radius: 20px;
+    position: relative;
+    bottom: 505px;
+    width: 40%;
+    left: 464px;
+}
+
+#image15{
+    height: 600px;
+    border-radius: 20px;
+    position: relative;
+    bottom: 505px;
+    left: 465px;
+}
+#footer{
+    width: 100%;
+    height: 500px;
+    background-color:#121212;
+    position: relative;
+    bottom: 520px;
+    font-family: "Truculenta", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    border-color: transparent;
+}
+
+#Returns{
+    position:relative;
+    top: 360px;
+    left: 80px;
+    font-size: 30px;
+    color: #fff;
+}
+
+#Privacy{
+    position:relative;
+    top: 290px;
+    left: 180px;
+    font-size: 30px;
+    color: #fff;
+}
+
+#v2024{
+    position:relative;
+    top: 225px;
+    left: 1000px;
+    font-size: 30px;
+    color: #fff;
+}
+
+#Quote{
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
+    position: relative;
+    bottom: 70px;
+}
+
+#Labiwinee{
+    text-align: center;
+    position:relative ;
+    top: 200px;
+    color: #9e8862;
+}
+
+#spam{
+    color: #9e8862;
+    font-size: 30px;
+}
+
+#allwrappers{
+    box-sizing: fit-content;
+}
+
+.gotop{
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  bottom: 1px;
+  right: 20px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 70px;
+  color: whitesmoke;
+  font-size: 22px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+#image1 {
+    height: 60px;
+    max-height: 70px;
+    width: auto;
+    object-fit: contain;
+    margin-right: 24px;
+    display: block;
+}
+.navbar-menu {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: 100px;
+}
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+    height: 100px;
+}
