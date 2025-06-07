@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Labi Wine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #121212;
+            --darker: #0a0a0a;
+            --dark-accent: #1e1e1e;
+            --gold: #c9a769;
+            --light-gold: #e6d5b3;
+            --text-light: #e0e0e0;
+            --text-lighter: #ffffff;
+            --text-dark: #b0b0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(8px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(201, 167, 105, 0.15);
+            height: 70px;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 100%;
+        }
+
+        #logo {
+            height: 40px;
+            filter: brightness(0) invert(1);
+            transition: all 0.3s ease;
+        }
+
+        #logo:hover {
+            filter: brightness(0) invert(0.8) sepia(1) hue-rotate(0deg) saturate(3);
+        }
+
+        .nav-return {
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            text-decoration: none;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-return:hover {
+            color: var(--light-gold);
+        }
+
+        /* ===== LOGIN CONTAINER ===== */
+        .login-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+            padding-top: 90px; /* Navbar offset */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+        }
+
+        .login-container {
+            background-color: var(--darker);
+            border-radius: 8px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            border: 1px solid rgba(201, 167, 105, 0.1);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 28px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .login-header p {
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px 12px 40px;
+            background-color: var(--dark-accent);
+            border: 1px solid rgba(201, 167, 105, 0.2);
+            border-radius: 4px;
+            color: var(--text-light);
+            font-family: 'Lora', serif;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: var(--gold);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(201, 167, 105, 0.2);
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 38px;
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 13px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+
+        .remember-me input {
+            margin-right: 8px;
+            accent-color: var(--gold);
+        }
+
+        .forgot-password {
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--gold);
+            color: var(--dark-bg);
+            border: none;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: var(--light-gold);
+            transform: translateY(-2px);
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+
+        .register-link a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== RESPONSIVE ADJUSTMENTS ===== */
+        @media (max-width: 768px) {
+            .navbar-container {
+                padding: 0 1.5rem;
+            }
+            
+            .login-container {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar-container {
+                padding: 0 1rem;
+            }
+            
+            .login-main {
+                padding: 1rem;
+                padding-top: 80px;
+            }
+            
+            .login-container {
+                padding: 25px 20px;
+            }
+            
+            .form-options {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .nav-return {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-container">
+            <a href="../main/index.html"><img id="logo" src="Labi-wine-logo.png" alt="Labi wine"></a>
+            <a href="../shop/shop.html" class="nav-return">RETURN TO SHOP</a>
+        </div>
+    </div>
+
+    <!-- Login Container -->
+    <main class="login-main">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>WELCOME BACK</h1>
+                <p>Sign in to access your account</p>
+            </div>
+
+            <form class="login-form">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="your@email.com" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="login-btn">SIGN IN</button>
+
+                <div class="register-link">
+                    Don't have an account? <a href="#">Register</a>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

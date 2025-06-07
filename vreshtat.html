@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vreshtat - Labi Wine</title>
+    <link rel="stylesheet" href="vreshtat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/04a20985c0.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <a href="../main/index.html"><img id="image1" src="Labi wine logo.png" alt="Labi wine"></a>
+            <ul class="navbar-menu">
+                <li><a href="../main/index.html" id="li1">Home</a></li>
+                <li class="dropdown">
+                    <a href="../vreshtat/vreshtat.html"><button class="dropdown-button">Wineyards</button></a>
+                    <div class="dropdown-content">
+                        <a href="../galeria/galeria.html">Gallery</a>
+                        <a href="../galeria/certificates.html">Certificates</a>
+                    </div>
+                </li>
+                <li><a href="../history/history.html" id="li2">History</a></li>
+                <li><a href="../shop/shop.html" id="li3">Shop</a></li>
+                <li><a href="../contact/contact.html" id="li4">Contact</a></li>
+            </ul>
+            <div class="navbar-icons">
+                <a href="../search/search.html"><img id="icon1" src="icons8-search-100.png" alt="Search"></a>
+                <a href="../login/login.html"><img id="icon2" src="icons8-user-100.png" alt="Login"></a>
+                <a href="../shop/shop.html"><img id="icon3" src="icons8-shop-100.png" alt="Shop"></a>
+            </div>
+        </div>
+    </div>
+
+    <main class="wineyards-container">
+        <div class="wineyards-header">
+            <h1>Our Esteemed Wineyards</h1>
+            <p>Where tradition meets the earth, crafting wines of exceptional character.</p>
+        </div>
+
+        <section class="vineyard-section">
+            <div class="vineyard-card">
+                <img src="vineyard-1.jpg" alt="Rahova Vineyard" class="vineyard-image">
+                <div class="vineyard-info">
+                    <h2 class="vineyard-name">Rahova Valley Vineyard</h2>
+                    <p class="vineyard-description">Nestled in the heart of Rahova Valley, this vineyard is our pride, benefiting from a unique microclimate and mineral-rich soil. It's home to our most revered grape varieties, producing wines with deep complexity and a distinct terroir.</p>
+                    <ul class="vineyard-details-list">
+                        <li><strong>Location:</strong> Rahova Valley, Albania</li>
+                        <li><strong>Elevation:</strong> 400m above sea level</li>
+                        <li><strong>Soil Type:</strong> Clay-limestone, rich in minerals</li>
+                        <li><strong>Key Grapes:</strong> Vranac, Cabernet Sauvignon, Merlot</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="vineyard-card reverse">
+                <img src="vineyard-2.jpg" alt="Bucina Hillside Vineyard" class="vineyard-image">
+                <div class="vineyard-info">
+                    <h2 class="vineyard-name">Bucina Hillside Vineyard</h2>
+                    <p class="vineyard-description">Perched on the sunny slopes of Bucina, this vineyard receives optimal sunlight exposure, perfect for cultivating grapes that require intense warmth. The gentle breezes from the nearby mountains ensure healthy vine growth and concentrated flavors.</p>
+                    <ul class="vineyard-details-list">
+                        <li><strong>Location:</strong> Bucina Hills, Albania</li>
+                        <li><strong>Elevation:</strong> 600m above sea level</li>
+                        <li><strong>Soil Type:</strong> Rocky, well-drained loam</li>
+                        <li><strong>Key Grapes:</strong> Chardonnay, Sauvignon Blanc, Pinot Grigio</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="vineyard-card">
+                <img src="vineyard-3.jpg" alt="Drini River Vineyard" class="vineyard-image">
+                <div class="vineyard-info">
+                    <h2 class="vineyard-name">Drini Riverfront Vineyard</h2>
+                    <p class="vineyard-description">Along the serene Drini River, our vineyard benefits from the cooling influence of the water, which moderates temperatures and extends the growing season. This results in grapes with elegant acidity and aromatic complexity, ideal for our refined white wines.</p>
+                    <ul class="vineyard-details-list">
+                        <li><strong>Location:</strong> Drini River Banks, Albania</li>
+                        <li><strong>Elevation:</strong> 250m above sea level</li>
+                        <li><strong>Soil Type:</strong> Alluvial, sandy loam</li>
+                        <li><strong>Key Grapes:</strong> Riesling, Gewürztraminer, Muscat</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="call-to-action">
+            <h2>Experience the Terroir</h2>
+            <p>Ready to discover the distinct tastes born from our unique land?</p>
+            <a href="../shop/shop.html" class="cta-button">Explore Our Wines</a>
+            <a href="../contact/contact.html" class="cta-button secondary-cta">Plan a Visit</a>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-logo">Labi Wine</div>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="../main/index.html">Return</a>
+            <a href="../contact/contact.html">Contact</a>
+        </div>
+        <p class="footer-copyright">2025 <span>Designed by Leart Shulina</span></p>
+        <p class="footer-quote">A poem in every bottle</p>
+    </footer>
+
+    <a class="gotop" href="#"><i class="fas fa-arrow-up"></i></a>
+</body>
+</html>
