@@ -45,14 +45,15 @@ body {
     height: 70px; /* Fixed height for navbar */
 }
 
-#image1 {
+.navbar-logo img {
     height: 40px;
+    width: auto;
     filter: brightness(0) invert(1);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-#image1:hover {
-    filter: brightness(0) invert(0.8) sepia(1) hue-rotate(0deg) saturate(3);
+.navbar-logo img:hover {
+    transform: scale(1.05);
 }
 
 .navbar-menu {
@@ -128,7 +129,7 @@ body {
 
 .dropdown-content a {
     padding: 0.7rem 1.5rem;
-    color: var(--text-light);
+    color: var(--text-lighter);
     font-size: 0.8rem;
     text-transform: capitalize;
     transition: all 0.3s ease;
@@ -153,6 +154,12 @@ body {
     align-items: center;
     height: 100%;
     padding: 0 0.5rem;
+    color: #fff !important;
+}
+
+.navbar-icons a:first-child, .navbar-icons a:first-child i {
+    text-decoration: none !important;
+    border: none !important;
 }
 
 .navbar-icons img {
@@ -165,6 +172,18 @@ body {
 .navbar-icons img:hover {
     opacity: 1;
     filter: brightness(0) invert(0.8) sepia(1) hue-rotate(0deg) saturate(5);
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default for desktop */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: var(--accent-color);
 }
 
 /* ===== HISTORY CONTENT ===== */
@@ -281,22 +300,26 @@ body {
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
 @media (max-width: 992px) {
     #H1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 }
 
 @media (max-width: 768px) {
     .navbar-container {
-        flex-direction: column;
+        flex-wrap: wrap;
         height: auto;
         padding: 1rem;
     }
 
+    .menu-toggle {
+        display: block; /* Visible only on mobile */
+    }
+
     .navbar-menu {
-        flex-direction: column;
         width: 100%;
+        flex-direction: column;
         height: auto;
-        margin: 1rem 0;
+        margin: 1rem 0 0;
     }
 
     .navbar-menu li {
@@ -314,16 +337,19 @@ body {
     .dropdown-content {
         position: static;
         width: 100%;
+        border-top: none;
+        border-left: 2px solid var(--gold);
     }
 
     .navbar-icons {
-        margin: 1rem 0 0;
         width: 100%;
         justify-content: center;
+        margin: 1rem 0 0;
+        height: auto;
     }
 
     #div2 {
-        padding: 5rem 1.5rem 2rem;
+        padding-top: 2rem;
     }
 
     #H1 {

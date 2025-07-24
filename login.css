@@ -10,17 +10,30 @@
     --text-dark: #b0b0b0;
 }
 
-/* Base Styles */
-body {
-    font-family: 'Lora', serif;
-    background-color: var(--dark-bg);
-    color: var(--text-light);
+/* ===== BASE STYLES ===== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
     line-height: 1.6;
 }
 
-/* ===== NAVBAR ===== */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Navbar Styles */
 .navbar {
     background-color: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(8px);
@@ -38,36 +51,36 @@ body {
     padding: 0 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    height: 70px;
+    height: 70px; /* Fixed height for navbar */
 }
 
-#logo {
+.navbar-logo img {
     height: 40px;
+    width: auto;
     filter: brightness(0) invert(1);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-#logo:hover {
-    filter: brightness(0) invert(0.8) sepia(1) hue-rotate(0deg) saturate(3);
+.navbar-logo img:hover {
+    transform: scale(1.05);
 }
 
 .navbar-menu {
     display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
-    height: 100%;
+    height: 100%; /* Take full navbar height */
+    margin: 0 auto; /* Center menu horizontally */
 }
 
 .navbar-menu li {
     margin: 0 1rem;
+    position: relative;
     display: flex;
-    align-items: center;
+    align-items: center; /* Center menu items vertically */
     height: 100%;
 }
 
-.navbar-menu a, 
-.dropdown-button {
+.navbar-menu a {
     text-decoration: none;
     color: var(--text-light);
     font-weight: 400;
@@ -75,14 +88,36 @@ body {
     font-size: 0.85rem;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    padding: 0;
-    line-height: 70px;
-    height: 100%;
     display: flex;
     align-items: center;
+    height: 100%;
+    padding: 0 0.5rem;
 }
 
-.navbar-menu a:hover,
+.navbar-menu a:hover {
+    color: var(--gold);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-button {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 0.5rem;
+}
+
 .dropdown-button:hover {
     color: var(--gold);
 }
@@ -97,11 +132,12 @@ body {
     padding: 1rem 0;
     border: 1px solid rgba(201, 167, 105, 0.1);
     border-top: 2px solid var(--gold);
-    animation: fadeIn 0.3s ease;
+    top: 100%; /* Position below navbar */
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+    animation: fadeIn 0.3s ease;
 }
 
 .dropdown-content a {
@@ -110,7 +146,6 @@ body {
     font-size: 0.8rem;
     text-transform: capitalize;
     transition: all 0.3s ease;
-    line-height: normal;
     height: auto;
 }
 
@@ -121,58 +156,141 @@ body {
 
 .navbar-icons {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     align-items: center;
+    height: 100%;
+    margin-left: auto; /* Pushes icons to right */
 }
 
 .navbar-icons a {
-    color: var(--text-light);
-    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 0.5rem;
+}
+
+.navbar-icons img {
+    height: 20px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
     transition: all 0.3s ease;
 }
 
-.navbar-icons a:hover {
-    color: var(--gold);
+.navbar-icons img:hover {
+    opacity: 1;
+    filter: brightness(0) invert(0.8) sepia(1) hue-rotate(0deg) saturate(5);
 }
 
-/* ===== LOGIN CONTAINER ===== */
+.menu-toggle {
+    display: none; /* Hidden by default for desktop */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: var(--accent-color);
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .menu-toggle {
+        display: block; /* Visible only on mobile */
+    }
+
+    .navbar-menu {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        margin: 1rem 0 0;
+    }
+
+    .navbar-menu li {
+        height: auto;
+        margin: 0.5rem 0;
+    }
+
+    .navbar-menu a,
+    .dropdown-button {
+        height: auto;
+        padding: 0.5rem 0;
+        justify-content: center;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        border-top: none;
+        border-left: 2px solid var(--gold);
+    }
+
+    .navbar-icons {
+        width: 100%;
+        justify-content: center;
+        margin: 1rem 0 0;
+        height: auto;
+    }
+
+    #div2 {
+        padding-top: 2rem;
+    }
+
+    #H1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #H1 {
+        font-size: 2rem;
+    }
+
+    #p1 {
+        font-size: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Login Container Styles */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    margin-top: 100px;
     padding: 2rem;
-    margin-top: 70px;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-}
-
-.login-box {
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: var(--darker);
-    border: 1px solid rgba(201, 167, 105, 0.1);
     border-radius: 8px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    width: 90%;
-    max-width: 450px;
-    padding: 2rem;
-    box-sizing: border-box;
+    border: 1px solid rgba(201, 167, 105, 0.1);
 }
 
 .login-header {
-    margin-bottom: 2rem;
     text-align: center;
+    margin-bottom: 30px;
 }
 
-.login-header h2 {
-    font-family: 'Cinzel', serif;
+.login-header h1 {
+    font-family: 'Truculenta', sans-serif;
+    font-size: 28px;
+    margin-bottom: 10px;
     color: var(--gold);
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
 }
 
 .login-header p {
     color: var(--text-dark);
-    font-size: 0.9rem;
+    font-size: 14px;
 }
 
 .login-form {
@@ -182,26 +300,26 @@ body {
 
 .input-group {
     position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: 25px;
 }
 
 .input-group label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
     color: var(--text-light);
-    font-size: 0.9rem;
+    font-size: 14px;
 }
 
 .input-group input {
     width: 100%;
-    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    padding: 12px 15px 12px 40px;
     background-color: var(--dark-accent);
     border: 1px solid rgba(201, 167, 105, 0.2);
     border-radius: 4px;
     color: var(--text-light);
-    font-family: 'Lora', serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
     transition: all 0.3s ease;
-    box-sizing: border-box;
 }
 
 .input-group input:focus {
@@ -212,52 +330,54 @@ body {
 
 .input-group i {
     position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 15px;
+    top: 38px;
     color: var(--text-dark);
+    font-size: 14px;
 }
 
-.remember-forgot {
+.form-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
-    font-size: 0.85rem;
+    margin-bottom: 25px;
+    font-size: 13px;
 }
 
-.remember-forgot label {
+.remember-me {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    color: var(--text-dark);
-    cursor: pointer;
 }
 
-.remember-forgot a {
+.remember-me input {
+    margin-right: 8px;
+    accent-color: var(--gold);
+}
+
+.forgot-password {
     color: var(--gold);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-.remember-forgot a:hover {
+.forgot-password:hover {
     text-decoration: underline;
 }
 
 .login-btn {
+    width: 100%;
+    padding: 14px;
     background-color: var(--gold);
     color: var(--dark-bg);
     border: none;
-    padding: 0.8rem;
     border-radius: 4px;
-    font-family: 'Cinzel', serif;
+    font-family: 'Truculenta', sans-serif;
     font-weight: 600;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 100%;
-    margin-bottom: 1rem;
 }
 
 .login-btn:hover {
@@ -267,13 +387,15 @@ body {
 
 .register-link {
     text-align: center;
-    font-size: 0.9rem;
+    margin-top: 25px;
+    font-size: 14px;
     color: var(--text-dark);
 }
 
 .register-link a {
     color: var(--gold);
     text-decoration: none;
+    font-weight: 500;
     transition: all 0.3s ease;
 }
 
@@ -281,122 +403,77 @@ body {
     text-decoration: underline;
 }
 
-/* ===== FOOTER ===== */
-.footer {
+/* Footer Styles */
+#footer {
     background-color: var(--darker);
-    padding: 2rem 0;
+    padding: 3rem 2rem;
+    text-align: center;
     border-top: 1px solid rgba(201, 167, 105, 0.1);
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 0 2rem;
+#Privacy, #Returns, #V2025, #Quote, #Spam {
+    margin-bottom: 1rem;
 }
 
-.footer-logo img {
-    height: 50px;
-    filter: brightness(0) invert(1);
-}
-
-.footer-links {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.footer-links a {
+#Privacy {
     color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+#Returns {
+    color: var(--gold);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.footer-links a:hover {
-    color: var(--gold);
+#Returns:hover {
+    text-decoration: underline;
 }
 
-.footer-social {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.footer-social a {
-    color: var(--text-light);
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-}
-
-.footer-social a:hover {
-    color: var(--gold);
-    transform: translateY(-3px);
-}
-
-.footer-copyright {
-    margin-top: 1.5rem;
-    text-align: center;
+#V2025 {
     color: var(--text-dark);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+#span1 {
+    color: var(--gold);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .navbar-container {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 1rem;
-    }
-
-    .navbar-menu {
-        width: 100%;
-        justify-content: center;
-        height: auto;
-        margin: 1rem 0;
-    }
-
-    .navbar-menu li {
-        height: auto;
-        margin: 0 0.5rem;
-    }
-
-    .navbar-menu a, 
-    .dropdown-button {
-        line-height: 1.5;
-        padding: 0.5rem 0;
-        height: auto;
-    }
-
-    .navbar-icons {
-        width: 100%;
-        justify-content: center;
-        margin-top: 1rem;
-    }
-
-    .login-box {
-        padding: 1.5rem;
-    }
+#Quote {
+    font-style: italic;
+    color: var(--text-dark);
+    font-size: 0.9rem;
 }
 
-@media (max-width: 480px) {
-    .remember-forgot {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: flex-start;
-    }
+#Spam {
+    color: var(--gold);
+    font-family: 'Truculenta', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
 
-    .footer-links {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+/* Scroll to top button */
+.gotop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--gold);
+    color: var(--dark-bg);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.gotop:hover {
+    background-color: var(--light-gold);
+    transform: translateY(-3px);
 }

@@ -1,55 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container">
-        <Link to="/" className="logo" onClick={closeMenu}>
-          LABI WINE
-        </Link>
-
-        <div className={`menu-toggle ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
+    <div className="navbar">
+      <div className="navbar-container">
+        <div className="navbar-logo">
+          <Link to="/main" target="_blank"><img src="Labi wine logo.png" alt="Labi wine" /></Link>
         </div>
-
-        <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <li><Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={closeMenu}>Home</Link></li>
-          <li><Link to="/gallery" className={location.pathname === '/gallery' ? 'active' : ''} onClick={closeMenu}>Gallery</Link></li>
-          <li><Link to="/history" className={location.pathname === '/history' ? 'active' : ''} onClick={closeMenu}>History</Link></li>
-          <li><Link to="/wineyards" className={location.pathname === '/wineyards' ? 'active' : ''} onClick={closeMenu}>Wineyards</Link></li>
-          <li><Link to="/certificates" className={location.pathname === '/certificates' ? 'active' : ''} onClick={closeMenu}>Certificates</Link></li>
-          <li><Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={closeMenu}>Contact</Link></li>
-          <li><Link to="/search" className={location.pathname === '/search' ? 'active' : ''} onClick={closeMenu}><i className="fas fa-search"></i></Link></li>
-          <li><Link to="/login" className={location.pathname === '/login' ? 'active' : ''} onClick={closeMenu}><i className="fas fa-user"></i></Link></li>
-          <li><Link to="/shop" className={location.pathname === '/shop' ? 'active' : ''} onClick={closeMenu}><i className="fas fa-shopping-bag"></i></Link></li>
+        <div className="menu-toggle" id="mobile-menu" onClick={toggleMenu}>
+          <i className="fas fa-bars"></i>
+        </div>
+        <ul className={`navbar-menu${isMenuOpen ? ' active' : ''}`} id="navbar-menu">
+          <li><Link to="/main" target="_blank">Home</Link></li>
+          <li className="dropdown">
+            <Link to="/vreshtat" target="_blank">Wineyards</Link>
+            <div className="dropdown-content">
+              <Link to="/galeria" target="_blank">Gallery</Link>
+              <Link to="/certificates" target="_blank">Certificates</Link>
+            </div>
+          </li>
+          <li><Link to="/history" target="_blank">History</Link></li>
+          <li><Link to="/shop" target="_blank">Shop</Link></li>
+          <li><Link to="/contact" target="_blank">Contact</Link></li>
         </ul>
+        <div className="navbar-icons" id="navbar-icons">
+          <Link to="/search" target="_blank"><i className="fas fa-search"></i></Link>
+          <Link to="/login" target="_blank"><i className="fas fa-user"></i></Link>
+          <Link to="/shop" target="_blank"><i className="fas fa-shopping-bag"></i></Link>
+        </div>
       </div>
-    </nav>
+    </div>
   );
 };
 

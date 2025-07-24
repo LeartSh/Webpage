@@ -3,14 +3,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Home from './pages/Home';
-import Gallery from './pages/Gallery';
+import Galeria from './pages/Galeria';
 import History from './pages/History';
-import Wineyards from './pages/Wineyards';
+import Vreshtat from './pages/Vreshtat';
 import Certificates from './pages/Certificates';
 import Contact from './pages/Contact';
 import Search from './pages/Search';
 import Login from './pages/Login';
 import Shop from './pages/Shop';
+import Main from './pages/Main';
 import './App.css';
 
 function App() {
@@ -21,9 +22,10 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/main" element={<Main />} />
+            <Route path="/galeria" element={<Galeria />} />
             <Route path="/history" element={<History />} />
-            <Route path="/wineyards" element={<Wineyards />} />
+            <Route path="/vreshtat" element={<Vreshtat />} />
             <Route path="/certificates" element={<Certificates />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/search" element={<Search />} />

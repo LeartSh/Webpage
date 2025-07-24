@@ -4,370 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Labi Wine</title>
-    <style>
-        /* ===== DARK THEME VARIABLES ===== */
-        :root {
-            --dark-bg: #121212;
-            --darker: #0a0a0a;
-            --dark-accent: #1e1e1e;
-            --gold: #c9a769;
-            --light-gold: #e6d5b3;
-            --text-light: #e0e0e0;
-            --text-lighter: #ffffff;
-            --text-dark: #b0b0b0;
-        }
-
-        /* ===== BASE STYLES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto Condensed', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* ===== NAVBAR ===== */
-        .navbar {
-            background-color: rgba(10, 10, 10, 0.95);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(201, 167, 105, 0.2);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar-brand {
-            font-family: 'Truculenta', sans-serif;
-            color: var(--gold);
-            font-size: 1.8rem;
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-
-        .navbar-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .navbar-menu a {
-            color: var(--text-light);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .navbar-menu a:hover {
-            color: var(--gold);
-        }
-
-        .navbar-menu a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--gold);
-            transition: width 0.3s ease;
-        }
-
-        .navbar-menu a:hover::after {
-            width: 100%;
-        }
-
-        /* ===== CONTACT CONTENT ===== */
-        .contact-container {
-            max-width: 1200px;
-            margin: 8rem auto 3rem; /* Adjusted for fixed navbar */
-            padding: 0 2rem;
-        }
-
-        .contact-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .contact-header h1 {
-            font-family: 'Truculenta', sans-serif;
-            color: var(--gold);
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .contact-header p {
-            color: var(--text-dark);
-            font-size: 1.1rem;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 4rem;
-        }
-
-        .contact-info {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .info-card {
-            background-color: var(--dark-accent);
-            padding: 2rem;
-            border-radius: 8px;
-            border-left: 3px solid var(--gold);
-            transition: all 0.3s ease;
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .info-card i {
-            color: var(--gold);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .info-card h3 {
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .info-card p {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        .contact-form {
-            background-color: var(--dark-accent);
-            padding: 2rem;
-            border-radius: 8px;
-            border-top: 3px solid var(--gold);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            background-color: var(--darker);
-            border: 1px solid rgba(201, 167, 105, 0.2);
-            border-radius: 4px;
-            color: var(--text-light);
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--gold);
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(201, 167, 105, 0.2);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 0.8rem;
-            background-color: var(--gold);
-            color: var(--dark-bg);
-            border: none;
-            border-radius: 4px;
-            font-family: 'Truculenta', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background-color: var(--light-gold);
-            transform: translateY(-2px);
-        }
-
-        .contact-map {
-            margin-top: 3rem;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(201, 167, 105, 0.2);
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background-color: var(--darker);
-            padding: 3rem 2rem 1.5rem;
-            border-top: 1px solid rgba(201, 167, 105, 0.1);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-logo img {
-            height: 50px;
-            filter: brightness(0) invert(1);
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--gold);
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .footer-social a {
-            color: var(--text-light);
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            color: var(--gold);
-            transform: translateY(-3px);
-        }
-
-        .footer-copyright {
-            text-align: center;
-            color: var(--text-dark);
-            font-size: 0.8rem;
-            margin-top: 1.5rem;
-        }
-
-        .footer-copyright span {
-            color: var(--gold);
-        }
-
-        .footer-quote {
-            font-style: italic;
-            margin-top: 0.5rem;
-        }
-
-        /* ===== RESPONSIVE ADJUSTMENTS ===== */
-        @media (max-width: 992px) {
-            .contact-header h1 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 1rem;
-            }
-            
-            .navbar-menu {
-                margin-top: 1rem;
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .contact-container {
-                margin: 7rem 1.5rem 3rem;
-                padding: 0;
-            }
-            
-            .contact-header h1 {
-                font-size: 2rem;
-            }
-            
-            .info-card {
-                padding: 1.5rem;
-            }
-            
-            .contact-form {
-                padding: 1.5rem;
-            }
-        }
-    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <a href="../main/index.html" class="navbar-brand">LABI WINE</a>
-        <ul class="navbar-menu">
-            <li><a href="../main/index.html">Home</a></li>
-            <li><a href="../history/history.html">History</a></li>
-            <li><a href="../shop/shop.html">Shop</a></li>
-            <li><a href="../contact/contact.html">Contact</a></li>
-            <li><a href="../vreshtat/vreshtat.html">Wineyards</a></li>
-        </ul>
-    </nav>
+    <!-- Navigation -->
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="../main/index.html" target="_blank"><img src="Labi wine logo.png" alt="Labi wine"></a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="navbar-menu" id="navbar-menu">
+                <li><a href="../main/index.html" target="_blank">Home</a></li>
+                <li class="dropdown">
+                    <a href="../vreshtat/vreshtat.html" target="_blank">Wineyards</a>
+                    <div class="dropdown-content">
+                        <a href="../galeria/galeria.html" target="_blank">Gallery</a>
+                        <a href="../galeria/certificates.html" target="_blank">Certificates</a>
+                    </div>
+                </li>
+                <li><a href="../history/history.html" target="_blank">History</a></li>
+                <li><a href="../shop/shop.html" target="_blank">Shop</a></li>
+                <li><a href="../contact/contact.html" target="_blank">Contact</a></li>
+            </ul>
+            <div class="navbar-icons" id="navbar-icons">
+                <a href="../search/search.html" target="_blank"><i class="fas fa-search"></i></a>
+                <a href="../login/login.html" target="_blank"><i class="fas fa-user"></i></a>
+                <a href="../shop/shop.html" target="_blank"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </div>
+    </div>
 
     <!-- Contact Content -->
     <main class="contact-container">
