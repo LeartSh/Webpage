@@ -35,86 +35,84 @@ ul {
 
 /* ===== NAVBAR STYLES ===== */
 .navbar {
-    background-color: var(--darker);
-    padding: 15px 0;
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(8px);
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(201, 167, 105, 0.15);
+    font-family: inherit;
 }
 
 .navbar-container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 70px; /* Fixed height for navbar */
 }
 
-.navbar-container img {
-    height: 50px; /* Adjust as needed for your logo */
+.navbar-logo img {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1);
     transition: transform 0.3s ease;
 }
 
-.navbar-container img:hover {
+.navbar-logo img:hover {
     transform: scale(1.05);
 }
 
 .navbar-menu {
     display: flex;
-    gap: 30px;
-    margin: 0;
+    list-style: none;
+    height: 100%; /* Take full navbar height */
+    margin: 0 auto; /* Center menu horizontally */
 }
 
-.navbar-menu li a {
-    color: var(--text-light);
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.navbar-menu li {
+    margin: 0 1rem;
     position: relative;
-    transition: all 0.3s ease;
+    display: flex;
+    align-items: center; /* Center menu items vertically */
+    height: 100%;
 }
 
-.navbar-menu li a:hover {
+.navbar-menu a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 0.5rem;
+}
+
+.navbar-menu a:hover {
     color: var(--gold);
 }
 
-.navbar-menu li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--gold);
-    transition: width 0.3s ease;
-}
-
-.navbar-menu li a:hover::after {
-    width: 100%;
-}
-
-/* Dropdown specific styles */
-.dropdown {
-    position: relative;
-}
-
 .dropdown-button {
-    background-color: transparent;
-    color: var(--text-light);
+    background: none;
     border: none;
-    padding: 0;
+    color: var(--text-light);
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
     text-transform: uppercase;
+    font-size: 0.85rem;
     letter-spacing: 1px;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 0.5rem;
 }
 
 .dropdown-button:hover {
@@ -124,51 +122,72 @@ ul {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--dark-accent);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    background-color: var(--darker);
+    min-width: 200px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     z-index: 1;
-    border-radius: 5px;
-    overflow: hidden;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 10px; /* Space between button and dropdown */
-}
-
-.dropdown-content a {
-    color: var(--text-light);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    text-transform: capitalize; /* Override uppercase for dropdown items */
-    letter-spacing: normal;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dropdown-content a:hover {
-    background-color: var(--dark-bg);
-    color: var(--gold);
+    padding: 1rem 0;
+    border: 1px solid rgba(201, 167, 105, 0.1);
+    border-top: 2px solid var(--gold);
+    top: 100%; /* Position below navbar */
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown-content a {
+    padding: 0.7rem 1.5rem;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+    height: auto;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(201, 167, 105, 0.1);
+    color: var(--gold);
 }
 
 .navbar-icons {
     display: flex;
-    gap: 15px;
+    gap: 1rem;
+    align-items: center;
+    height: 100%;
+    margin-left: auto; /* Pushes icons to right */
+}
+
+.navbar-icons a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 0.5rem;
 }
 
 .navbar-icons img {
-    height: 30px; /* Adjust as needed for your icons */
-    filter: invert(1); /* Makes icons white on dark background */
-    transition: transform 0.3s ease, filter 0.3s ease;
+    height: 20px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: all 0.3s ease;
 }
 
 .navbar-icons img:hover {
-    transform: scale(1.1);
-    filter: invert(0.8) sepia(1) saturate(5) hue-rotate(30deg); /* Adjust to give a golden hover effect */
+    opacity: 1;
+    filter: brightness(0) invert(0.8) sepia(1) hue-rotate(0deg) saturate(5);
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default for desktop */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: var(--accent-color);
 }
 
 /* ===== MAIN CONTENT - WINE YARDS ===== */
@@ -403,10 +422,6 @@ ul {
 
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
 @media (max-width: 992px) {
-    .navbar-menu {
-        gap: 20px;
-    }
-
     .navbar-container img {
         height: 45px;
     }
@@ -439,31 +454,54 @@ ul {
 
 @media (max-width: 768px) {
     .navbar-container {
-        flex-direction: column;
-        gap: 15px;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .menu-toggle {
+        display: block; /* Visible only on mobile */
     }
 
     .navbar-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        margin: 1rem 0 0;
     }
 
-    .navbar-menu li a, .dropdown-button {
-        font-size: 0.9rem;
+    .navbar-menu li {
+        height: auto;
+        margin: 0.5rem 0;
+    }
+
+    .navbar-menu a,
+    .dropdown-button {
+        height: auto;
+        padding: 0.5rem 0;
+        justify-content: center;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        border-top: none;
+        border-left: 2px solid var(--gold);
     }
 
     .navbar-icons {
-        margin-top: 10px;
+        width: 100%;
+        justify-content: center;
+        margin: 1rem 0 0;
+        height: auto;
     }
 
-    .wineyards-container {
-        margin: 7rem auto 3rem;
-        padding: 0 1.5rem;
+    #div2 {
+        padding-top: 2rem;
     }
 
     .wineyards-header h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .vineyard-info {
