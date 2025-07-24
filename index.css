@@ -1,6 +1,8 @@
-
 *{
     text-decoration: none;
+    font-family: "Truculenta", sans-serif;
+    font-weight: 100;
+
 }
 
 html,body{
@@ -21,7 +23,6 @@ body{
     height: 100%;
     width: 100%;
     overflow-x: hidden;
-    font-family: "Truculenta", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings:
@@ -114,6 +115,7 @@ body{
 #li4:hover{
     color:#e3940b ;
 }
+
 #image1 {
     height: 60px;
     width: auto;
@@ -310,6 +312,8 @@ body{
     object-fit: cover;
     vertical-align: right;
     display: inline-block;
+    background-color: none;
+    background: none;
 }
 
 .navbar ul {
@@ -453,6 +457,7 @@ body{
     font-style: normal;
     font-variation-settings:
     "wdth" 100;
+    background-color: none;
 }
 
 .navbar-icons {
@@ -474,7 +479,7 @@ body{
     margin-left: 570px;
     margin-top:  100px;
     text-align: center;
-    color: black;
+    color: white;
 }
 
 
@@ -485,7 +490,7 @@ body{
     left: 285px;
     bottom: 130px;
     text-align: center;
-    color: #121212;
+    color: white;
 }
 
 #h2{
@@ -495,7 +500,7 @@ body{
     left: 285px;
     bottom: 170px;
     text-align: center;
-    color: #121212;
+    color: white;
 
 }
 
@@ -1007,3 +1012,121 @@ color: #f1f2f6;
 html{
     scroll-behavior: smooth;
 }
+
+/* --- Center navbar links, icons far right, original icon style --- */
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1200px) {
+    #li1 {
+        margin-left: 200px;
+    }
+    #li2 {
+        margin-left: 250px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #li1 {
+        margin-left: 150px;
+    }
+    #li2 {
+        margin-left: 200px;
+    }
+    #li3, #li4 {
+        margin-left: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        height: 80px;
+    }
+    
+    #image1 {
+        height: 50px;
+    }
+    
+    #li1, #li2, #li3, #li4 {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+    
+    #li1 {
+        margin-left: 100px;
+    }
+    
+    #li2 {
+        margin-left: 150px;
+    }
+    
+    #li3, #li4 {
+        margin-left: 20px;
+    }
+    
+    body {
+        background-size: 100% 600px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .navbar {
+        height: 70px;
+    }
+    
+    #image1 {
+        height: 40px;
+    }
+    
+    #li1, #li2, #li3, #li4 {
+        font-size: 16px;
+        margin-top: 12px;
+    }
+    
+    #li1 {
+        margin-left: 50px;
+    }
+    
+    #li2 {
+        margin-left: 100px;
+    }
+    
+    #li3, #li4 {
+        margin-left: 15px;
+    }
+    
+    body {
+        background-size: 100% 500px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        height: 60px;
+    }
+    
+    #image1 {
+        height: 35px;
+    }
+    
+    #li1, #li2, #li3, #li4 {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    
+    #li1 {
+        margin-left: 30px;
+    }
+    
+    #li2 {
+        margin-left: 60px;
+    }
+    
+    #li3, #li4 {
+        margin-left: 10px;
+    }
+    
+    body {
+        background-size: 100% 400px;
+    }
+}
+

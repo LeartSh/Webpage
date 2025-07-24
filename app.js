@@ -1,13 +1,11 @@
 import React from 'react';
-import RedirectButton from './RedirectButton'; // Import the RedirectButton component
 
-const App = () => {
+function App() {
   return (
-    <div className="App">
-      <h1>Welcome to Our Site</h1>
-      <RedirectButton /> {'./RedirectButton'}
+    <div>
+      <h1>Hello, Labi Wine!</h1>
     </div>
   );
-};
+}
 
 export default App;
