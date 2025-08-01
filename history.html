@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History</title>
-    <link rel="stylesheet" href="history.css">
+    <link rel="stylesheet" href="History.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
@@ -17,34 +17,29 @@
 
 <body>
     <!-- Navbar -->
-    <div class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-logo">
-                <a href="../main/index.html" target="_blank"><img src="Labi wine logo.png" alt="Labi wine"></a>
-            </div>
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="navbar-menu" id="navbar-menu">
-                <li><a href="../main/index.html" target="_blank">Home</a></li>
-                <li class="dropdown">
-                    <a href="../vreshtat/vreshtat.html" target="_blank">Wineyards</a>
-                    <div class="dropdown-content">
-                        <a href="../galeria/galeria.html" target="_blank">Gallery</a>
-                        <a href="../galeria/certificates.html" target="_blank">Certificates</a>
-                    </div>
-                </li>
-                <li><a href="../history/history.html" target="_blank">History</a></li>
-                <li><a href="../shop/shop.html" target="_blank">Shop</a></li>
-                <li><a href="../contact/contact.html" target="_blank">Contact</a></li>
-            </ul>
-            <div class="navbar-icons" id="navbar-icons">
-                <a href="../search/search.html" target="_blank"><i class="fas fa-search"></i></a>
-                <a href="../login/login.html" target="_blank"><i class="fas fa-user"></i></a>
-                <a href="../shop/shop.html" target="_blank"><i class="fas fa-shopping-bag"></i></a>
-            </div>
-        </div>
-    </div>
+ <div class="navbar">
+  <ul>
+    <li><img id="image1" src="Labi wine logo.png" alt="Labi wine"></li>
+    <li><a href="Labi wine.html" id="li1">Home</a></li>
+
+    <li class="dropdown">
+      <button class="dropdown-button">Wineyards</button>
+      <div class="dropdown-content">
+        <a href="Gallery.html" id="li2">Gallery</a>
+        <a href="Certificates.html" id="li2">Certificates</a>
+      </div>
+    </li>
+
+    <li><a href="History/History.html" id="li2">History</a></li>
+    <li><a href="Shop/Shop.html" id="li3">Shop</a></li>
+    <li><a href="Contact/Contact.html" id="li4">Contact</a></li>
+
+    <li><a href="Search/Search"><img id="icon1" src="icons8-search-100.png" alt=""></a></li>
+    <li><a href="Login/Login"><img id="icon2" src="icons8-user-100.png" alt=""></a></li>
+    <li><a href="Shop/Shop.html"><img id="icon3" src="icons8-shop-100.png" alt=""></a></li>
+  </ul>
+</div>
+
 
     <!-- History Content -->
     <div id="div2">
@@ -68,7 +63,9 @@
     <!-- Footer -->
     <footer id="footer">
         <h3 id="Privacy">Privacy Policy</h3>
-        <a href="../main/index.html"><p id="Returns">Return</p></a>
+        <a href="../Labi wine.html">
+            <h3 id="Returns">Returns</h3>
+        </a>
         <p id="V2025">2025 <span id="span1">designed by Leart Shulina</span></p>
         <p id="Quote">A poem in every bottle</p>
         <p id="Spam">Labi wine</p>
