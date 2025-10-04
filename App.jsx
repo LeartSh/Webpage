@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import Home from './pages/Home';
-import Galeria from './pages/Galeria';
-import History from './pages/History';
-import Vreshtat from './pages/Vreshtat';
-import Certificates from './pages/Certificates';
-import Contact from './pages/Contact';
-import Search from './pages/Search';
-import Login from './pages/Login';
-import Shop from './pages/Shop';
-import Main from './pages/Main';
+import Navbar from '../navbar/Navbar';
+import Footer from '../Footer/Footer';
+import Home from '../Home/Home';
+import Galeria from '../Galeria/Galeria';
+import History from '../History/History';
+import Vreshtat from '../vreshtat/Vreshtat';
+import Certificates from '../certificates/Certificates';
+import Contact from '../contact/Contact';
+import Search from '../search/Search';
+import Login from '../Login/Login';
+import Shop from '../shop/Shop';
+import Main from '../main/Main';
 import './App.css';
 
 function App() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../galeria/certificates.css'; // Updated path to point to location inside src
-import Navbar from '../Navbar';
+import Navbar from '../navbar/Navbar';
 
 function Certificates() {
   return (

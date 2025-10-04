@@ -1,6 +1,6 @@
 import React from 'react';
-import '../history/history.css'; // Updated path to point to location inside src
-import Navbar from '../Navbar';
+import './history.css'; // Updated path to point to location inside src
+import Navbar from '../navbar/Navbar';
 
 function History() {
   return (

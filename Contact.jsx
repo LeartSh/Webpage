@@ -1,6 +1,6 @@
 import React from 'react';
-import '../contact/contact.css'; // Ensure path points to location inside src
-import Navbar from '../Navbar';
+import './contact.css'; // Ensure path points to location inside src
+import Navbar from '../navbar/Navbar';
 
 function Contact() {
   return (

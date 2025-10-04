@@ -20,10 +20,10 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Quick Links</h4>
             <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/gallery">Gallery</Link></li>
+              <li><Link to="/main">Home</Link></li>
+              <li><Link to="/galeria">Gallery</Link></li>
               <li><Link to="/history">History</Link></li>
-              <li><Link to="/wineyards">Wineyards</Link></li>
+              <li><Link to="/vreshtat">Wineyards</Link></li>
             </ul>
           </div>
 
